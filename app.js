@@ -223,6 +223,11 @@ app.post("/", function(req, res) {
 
   });
 
-app.listen(3000, function(req, res) {
-  console.log("Port : 3000 ");
+  let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function() {
+  console.log("Successfully connected to server");
 });
